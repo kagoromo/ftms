@@ -1,0 +1,22 @@
+<div id="list-locations">
+  <div class="row">
+    <div class="col-md-12 title">
+      <%= t "layouts.admin.locations" %>
+      <span>
+        <%= link_to t("locations.buttons.admin.new"),
+          new_admin_location_path, class: "btn btn-success pull-right" %>
+      </span>
+    </div>
+  </div>
+  <table id="locations" class="table table-bordered display" data-source="<%= admin_locations_url(format: "json") %>">
+    <thead>
+      <tr class="active">
+        <th></th>
+        <th><%= t "locations.name" %></th>
+        <th><%= t "locations.manager" %></th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>

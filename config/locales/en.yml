@@ -142,6 +142,7 @@ en:
     evaluations: "Evaluations"
     user_profiles: "User profiles"
     user: "User"
+    locations: "Locations"
     footer:
       street: "13F, KeangNam LandMark 72 Building"
       province: "Tu Liem, Ha Noi, Viet Nam"
@@ -233,6 +234,10 @@ en:
       edit: "Edit"
     users:
       all: "All User"
+      new: "New"
+      edit: "Edit"
+    locations:
+      all: "All Locations"
       new: "New"
       edit: "Edit"
   datatables:

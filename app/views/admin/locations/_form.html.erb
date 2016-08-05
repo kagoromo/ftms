@@ -1,0 +1,37 @@
+<div id="locations-form">
+  <%= form_for [:admin, @location] do |f| %>
+    <div class="row">
+      <%= render "shared/error_messages", object: @location %>
+      <div class="title"><%= @location.name %></div>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-2 text-right">
+            <span><%= t "locations.name" %>:</span>
+          </div>
+          <div class="col-md-9">
+            <%= f.text_field :name, class: "form-control", required: true,
+              placeholder: I18n.t("locations.form.input_location_name") %>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-2 text-right">
+            <span><%= t "locations.manager" %>:</span>
+          </div>
+          <div class="col-md-9">
+            <%= f.select :user_id, @managers.collect{|u| [u.name, u.id]},
+              {prompt: ""}, {selected: f.object.user_id, required: false,
+              class: "form-control"} %>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col-md-1 col-md-offset-10">
+        <%= f.submit (f.object.new_record? ? t("button.create")
+          : t("buttons.save")), class: "btn btn-primary text-right" %>
+      </div>
+    </div>
+  <% end %>
+</div>
